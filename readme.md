@@ -6,5 +6,5 @@ pip install -r requirements.txt
 ```
 run -->
 ```
-python photo_editor.py
+python editor.py
 ```

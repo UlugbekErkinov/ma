@@ -474,7 +474,7 @@ class MainLayout(QVBoxLayout):
 
         self.img_lbl = QLabel("Press <b>'Upload'</b> to to start<br>"
                               "<div style='margin: 30px 0'><img src='logo.png' /></div>"
-                              "<b>made by</b> <span style='color:red'>Team 3</span>")
+                              "<b>made by</b> <span style='border:solid 15px red; color: orange; background-color: blue; cursor: pointer'> Team 3 < /span >")
         self.img_lbl.setAlignment(Qt.AlignCenter)
 
         self.file_name = None
@@ -536,9 +536,7 @@ class MainLayout(QVBoxLayout):
 
     def on_upload(self):
         logger.debug("upload")
-        img_path, _ = QFileDialog.getOpenFileName(self.parent, "Open image",
-                                                  "/Users",
-                                                  "Images (*.png *jpg)")
+        img_path, _ = QFileDialog.getOpenFileName(self.parent, "Open image", "/Users/Desktop","Images (*.png *jpg)")
 
         if img_path:
             logger.debug(f"open file {img_path}")
@@ -619,7 +617,7 @@ class EasyPzUI(QWidget):
         self.setMinimumSize(600, 500)
         self.setMaximumSize(900, 900)
         self.setGeometry(600, 600, 600, 600)
-        self.setWindowTitle('Easy Peasy - Lemon Squeezy')
+        self.setWindowTitle('Symplist - image editor')
         self.center()
         self.show()
 

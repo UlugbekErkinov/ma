@@ -25,8 +25,7 @@ logger = logging.getLogger()
 
 
 def init():
-    """Get and parse parameters from console"""
-
+   
     args = sys.argv[1:]
 
     if len(args) == 0:
@@ -36,7 +35,7 @@ def init():
     logger.debug(f"run with params: {args}")
 
     # transform arguments from console
-    opts, rem = getopt.getopt(args, "p:", ["rotate=", "resize=", "color_filter=", "flip_top", "flip_left"])
+    opts = getopt.getopt(args, "p:", ["rotate=", "resize=", "color_filter=", "flip_top", "flip_left"])
     rotate_angle = resize = color_filter = flip_top = flip_left = None
 
     path = None

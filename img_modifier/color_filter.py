@@ -1,7 +1,3 @@
-"""
-Apply filters to PIL.image
-"""
-
 import logging
 
 logger = logging.getLogger()

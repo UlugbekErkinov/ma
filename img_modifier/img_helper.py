@@ -1,9 +1,3 @@
-"""
-Image helper
-Main module of the package
-All image operations should go thorough this module
-"""
-
 from PIL import Image, ImageEnhance
 import logging
 
@@ -49,14 +43,10 @@ def rotate(img, angle):
 
 
 def color_filter(img, filter_name):
-    """Filter image"""
-
     return cf.color_filter(img, filter_name)
 
 
 def brightness(img, factor):
-    """Adjust image brightness form 0.5-2 (1 - original)"""
-
     if factor > BRIGHTNESS_FACTOR_MAX or factor < BRIGHTNESS_FACTOR_MIN:
         raise ValueError("factor should be [0-2]")
 
@@ -65,8 +55,6 @@ def brightness(img, factor):
 
 
 def contrast(img, factor):
-    """Adjust image contrast form 0.5-1.5 (1 - original)"""
-
     if factor > CONTRAST_FACTOR_MAX or factor < CONTRAST_FACTOR_MIN:
         raise ValueError("factor should be [0.5-1.5]")
 
@@ -75,8 +63,6 @@ def contrast(img, factor):
 
 
 def sharpness(img, factor):
-    """Adjust image sharpness form 0-2 (1 - original)"""
-
     if factor > SHARPNESS_FACTOR_MAX or factor < SHARPNESS_FACTOR_MIN:
         raise ValueError("factor should be [0.5-1.5]")
 
@@ -85,27 +71,16 @@ def sharpness(img, factor):
 
 
 def flip_left(img):
-    """Flip left to right"""
-
     return img.transpose(Image.FLIP_LEFT_RIGHT)
 
 
 def flip_top(img):
-    """Flip top to bottom"""
-
     return img.transpose(Image.FLIP_TOP_BOTTOM)
 
 
 def save(img, path):
-    """Save image to hard drive"""
-
     img.save(path)
 
 
 def open_img(img):
-    """
-    Open image in temporary file
-    !use it only for debug!
-    """
-
     img.open()
